@@ -6,9 +6,11 @@ const USER_DATABASE = process.env.USER_DATABASE;
 const PASSWORD_DATABASE = process.env.PASSWORD_DATABASE;
 
 let sequelize;
-if (process.env.JAWSDB_URL) {
-    sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
+let database = process.env.DATABASE_URL || 'testedb'
+
+if (process.env.DATABASE_URL) {
+            sequelize = new Sequelize(database)
+   } else {
     // localhost
     sequelize = new Sequelize(DATABASE, USER_DATABASE, PASSWORD_DATABASE, {
     host: "localhost",
