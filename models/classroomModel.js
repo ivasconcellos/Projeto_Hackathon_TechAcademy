@@ -18,6 +18,6 @@ const Classroom = connection.define("classrooms", {
 });
 
 
-Classroom.sync({ force: true});
+//Classroom.sync({ force: true});
 
 module.exports = Classroom;
